@@ -1,4 +1,6 @@
 import { TodoModel } from "../models/todo.js";
+import { addTodoValidator,updateTodoValidator } from "../validators/todo.js";
+
 
 export const addTodo = async (req, res ,next) =>{
   try {
