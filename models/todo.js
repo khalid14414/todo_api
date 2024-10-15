@@ -1,4 +1,5 @@
 import { Schema,model } from "mongoose";
+import { toJSON } from "@reis/mongoose-to-json";
 
 const todoSchema = new Schema({
         title:{type:String, required:true},
@@ -6,4 +7,4 @@ const todoSchema = new Schema({
         completed:{type:Boolean, default:false}
     });
 
-    export const TodoModel = model('Todo',todoSchema);
+    export const TodoModel = model('Todo',todoSchema.plugin(toJSON));
